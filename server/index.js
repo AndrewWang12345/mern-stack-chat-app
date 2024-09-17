@@ -26,9 +26,9 @@ mongoose.connect(process.env.MONGO_URL, {
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static("./build"));
+app.use(express.static("./frontend/build"));
 app.get("*", (req, res)=>{
-    res.sendFile(path.resolve(__dirname, "build", "index.html"))
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
 });
 
 const server = app.listen(process.env.PORT, () => {
